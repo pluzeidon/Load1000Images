@@ -1,0 +1,27 @@
+---
+// Página principal: incluye tres islands:
+// - ReactIsland (botón 1) -> React implementation
+// - SvelteIsland (botón 2) -> Svelte implementation
+// - ReactTanstackIsland (botón 3) -> React + @tanstack/react-virtual
+import ReactIsland from '../components/react/ReactIsland.client.jsx';
+import TanstackIsland from '../components/tanstack/TanstackIsland.client.jsx';
+import SvelteIsland from '../components/svelte/SvelteIsland.client.js';
+---
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galería Virtual - Demo</title>
+  </head>
+  <body class="bg-gray-50 min-h-screen p-8">
+    <main class="max-w-5xl mx-auto">
+      <h1 class="text-3xl font-bold mb-6">Galería Virtual (Astro + React + Svelte + Tanstack)</h1>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <ReactIsland client:load />
+        <SvelteIsland client:load />
+        <TanstackIsland client:load />
+      </div>
+      <p class="mt-8 text-sm text-gray-600">Botón 1: React pool. Botón 2: Svelte. Botón 3: @tanstack/virtual.</p>
+    </main>
+  </body>
+</html>
